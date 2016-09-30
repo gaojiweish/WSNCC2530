@@ -1,0 +1,944 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V9.10.1.2146 for 8051                30/Sep/2016  09:49:35
+# Copyright 2004-2014 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Components\hal\target\CC2530EB\hal_SHT30.c
+#    Command line       =  
+#        -f "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440) "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Components\hal\target\CC2530EB\hal_SHT30.c" -D ZTOOL_P1 -D
+#        MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -lC
+#        "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\List\"
+#        -lA "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\List\"
+#        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\Obj\"
+#        -e --no_code_motion --debug --core=plain --dptr=16,1
+#        --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\" -I "C:\Texas
+#        Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\Source\" -I
+#        "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes
+#    List file          =  
+#        C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\List\hal_SHT30.lst
+#    Object file        =  
+#        C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\Obj\hal_SHT30.r51
+#
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Mesh v1.0.0\Components\hal\target\CC2530EB\hal_SHT30.c
+      1          
+      2          #include "hal_mcu.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa0
+   \   union <unnamed> volatile __sfr _A_P2
+   \                     _A_P2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf5
+   \   unsigned char volatile __sfr P2SEL
+   \                     P2SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+      3          #include "hal_SHT30.h"
+      4          
+      5          
+      6          /* SDA is at P0.4 */
+      7          #define HAL_SDA_PORT   P0
+      8          #define HAL_SDA_BIT    BV(4)
+      9          #define HAL_SDA_SEL    P0SEL
+     10          #define HAL_SDA_DIR    P0DIR
+     11          
+     12          /* SCL is at P2.0 */
+     13          #define HAL_SCL_PORT   P2
+     14          #define HAL_SCL_BIT    BV(0)
+     15          #define HAL_SCL_SEL    P2SEL
+     16          #define HAL_SCL_DIR    P2DIR
+     17          
+     18          #define HAL_SHT30_I2C_ADDR  0x88
+     19          #define HAL_SHT30_I2C_ACK 0
+     20          #define HAL_SHT30_I2C_NACK 1
+     21          #define HAL_SHT30_PERIODIC_CMD_MSB   0x21//   1 second
+     22          #define HAL_SHT30_PERIODIC_CMD_LSB   0x2D//   Low Repeatability, 2.5~3ms
+     23          
+     24          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     25          int16 Temperature = 0;//   *0.1c
+   \                     Temperature:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     26          uint8 Humidity = 0;//   0~100%
+   \                     Humidity:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     27          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     28          uint8 CollectCount;
+   \                     CollectCount:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     29          void HalI2CDelay(void);
+     30          void HalSHT30I2cStart(void);
+     31          void HalSHT30I2cStop(void);
+     32          uint8 HalSHT30I2cReadOneByte(uint8 ACK);
+     33          uint8 HalSHT30I2cWriteOneByte(uint8 Dat);
+     34          uint8 HalSHT30WriteCmd(uint8 TMP_MSB, uint8 TMP_LSB);
+     35          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     36          void HalI2CDelay(void)
+   \                     HalI2CDelay:
+     37          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     38            uint8 x;
+     39            
+     40            for(x = 0; x < 5; x++)
+   \   000000   7405         MOV     A,#0x5
+     41            {
+     42              asm("NOP");asm("NOP");
+   \                     ??HalI2CDelay_0:
+   \   000002   00           NOP
+   \   000003   00           NOP
+     43              asm("NOP");asm("NOP");
+   \   000004   00           NOP
+   \   000005   00           NOP
+     44              asm("NOP");asm("NOP");
+   \   000006   00           NOP
+   \   000007   00           NOP
+     45              asm("NOP");asm("NOP");
+   \   000008   00           NOP
+   \   000009   00           NOP
+     46              asm("NOP");asm("NOP");
+   \   00000A   00           NOP
+   \   00000B   00           NOP
+     47            }
+   \   00000C   14           DEC     A
+   \   00000D   70F3         JNZ     ??HalI2CDelay_0
+     48          }
+   \   00000F   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     49          void HalSHT30I2cStart(void)
+   \                     HalSHT30I2cStart:
+     50          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     51            HAL_SCL_SEL &= ~(HAL_SCL_BIT);    /* Set SCL pin function to GPIO */
+   \   000004   53F5FE       ANL     0xf5,#0xfe
+     52            HAL_SCL_DIR &= ~(HAL_SCL_BIT);    /* Set SCL pin direction to Input */
+   \   000007   53FFFE       ANL     0xff,#0xfe
+     53            HAL_SDA_SEL &= ~(HAL_SDA_BIT);    /* Set SDA pin function to GPIO */
+   \   00000A   53F3EF       ANL     0xf3,#0xef
+     54            HAL_SDA_DIR &= ~(HAL_SDA_BIT);    /* Set SDA pin direction to Input */
+   \   00000D   53FDEF       ANL     0xfd,#0xef
+     55            
+     56            HalI2CDelay();
+   \   000010                ; Setup parameters for call to function HalI2CDelay
+   \   000010   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+     57            
+     58            HAL_SDA_DIR |= HAL_SDA_BIT;    /* Set SDA pin direction to Output */
+   \   000013   12....       LCALL   ?Subroutine3 & 0xFFFF
+     59            HAL_SDA_PORT &= ~(HAL_SDA_BIT);
+     60                
+     61            HalI2CDelay();
+   \                     ??CrossCallReturnLabel_6:
+   \   000016                ; Setup parameters for call to function HalI2CDelay
+   \   000016   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+     62            
+     63            HAL_SCL_DIR |= HAL_SCL_BIT;    /* Set SCL pin direction to Output */
+   \   000019   12....       LCALL   ?Subroutine2 & 0xFFFF
+     64            HAL_SCL_PORT &= ~(HAL_SCL_BIT);
+     65          }
+   \                     ??CrossCallReturnLabel_0:
+   \   00001C                REQUIRE ?Subroutine0
+   \   00001C                REQUIRE P2SEL
+   \   00001C                REQUIRE P2DIR
+   \   00001C                REQUIRE P0SEL
+   \   00001C                REQUIRE P0DIR
+   \   00001C                REQUIRE _A_P0
+   \   00001C                REQUIRE _A_P2
+   \   00001C                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   43FD10       ORL     0xfd,#0x10
+   \   000003   C284         CLR     0x80.4
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   43FF01       ORL     0xff,#0x1
+   \   000003   C2A0         CLR     0xa0.0
+   \   000005   22           RET
+     66          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     67          void HalSHT30I2cStop(void)
+   \                     HalSHT30I2cStop:
+     68          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     69            HAL_SDA_DIR |= HAL_SDA_BIT;    /* Set SDA pin direction to Output */
+   \   000004   12....       LCALL   ?Subroutine3 & 0xFFFF
+     70            HAL_SDA_PORT &= ~(HAL_SDA_BIT);
+     71                
+     72            HalI2CDelay();
+   \                     ??CrossCallReturnLabel_7:
+   \   000007                ; Setup parameters for call to function HalI2CDelay
+   \   000007   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+     73            
+     74            HAL_SCL_DIR &= ~(HAL_SCL_BIT);    /* Set SCL pin direction to Input */
+   \   00000A   53FFFE       ANL     0xff,#0xfe
+     75            
+     76            HalI2CDelay();
+   \   00000D                ; Setup parameters for call to function HalI2CDelay
+   \   00000D   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+     77            
+     78            HAL_SDA_DIR &= ~(HAL_SDA_BIT);    /* Set SDA pin direction to Input */
+   \   000010   53FDEF       ANL     0xfd,#0xef
+     79            
+     80          }
+   \   000013   80..         SJMP    ?Subroutine0
+   \   000015                REQUIRE P0DIR
+   \   000015                REQUIRE _A_P0
+   \   000015                REQUIRE P2DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     81          uint8 HalSHT30I2cReadOneByte(uint8 ACK)
+   \                     HalSHT30I2cReadOneByte:
+     82          {
+   \   000000                REQUIRE ?V0
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0,R1
+     83            uint8 i;
+     84            uint8 ucRet = 0;
+   \   000007   7E00         MOV     R6,#0x0
+     85            
+     86            HAL_SDA_DIR &= ~(HAL_SDA_BIT);    /* Set SDA pin direction to Input */
+   \   000009   53FDEF       ANL     0xfd,#0xef
+     87            for ( i = 0 ; i < 8 ;  i ++)
+   \   00000C   7F08         MOV     R7,#0x8
+     88            {
+     89              HAL_SCL_DIR &= ~(HAL_SCL_BIT);    /* Set SCL pin direction to Input */
+   \                     ??HalSHT30I2cReadOneByte_0:
+   \   00000E   53FFFE       ANL     0xff,#0xfe
+     90              ucRet <<= 1;
+   \   000011   EE           MOV     A,R6
+   \   000012   C3           CLR     C
+   \   000013   33           RLC     A
+   \   000014   FE           MOV     R6,A
+     91              HalI2CDelay();
+   \   000015                ; Setup parameters for call to function HalI2CDelay
+   \   000015   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+     92              if(HAL_SDA_PORT & HAL_SDA_BIT)
+   \   000018   A284         MOV     C,0x80.4
+   \   00001A   5001         JNC     ??HalSHT30I2cReadOneByte_1
+     93              {
+     94          	ucRet ++;
+   \   00001C   0E           INC     R6
+     95              }
+     96              HAL_SCL_DIR |= HAL_SCL_BIT;    /* Set SCL pin direction to Output */
+   \                     ??HalSHT30I2cReadOneByte_1:
+   \   00001D   12....       LCALL   ?Subroutine2 & 0xFFFF
+     97              HAL_SCL_PORT &= ~(HAL_SCL_BIT);
+     98              HalI2CDelay();
+   \                     ??CrossCallReturnLabel_1:
+   \   000020                ; Setup parameters for call to function HalI2CDelay
+   \   000020   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+     99            }
+   \   000023   1F           DEC     R7
+   \   000024   EF           MOV     A,R7
+   \   000025   70E7         JNZ     ??HalSHT30I2cReadOneByte_0
+    100            if(ACK == HAL_SHT30_I2C_ACK)
+   \   000027   E5..         MOV     A,?V0
+   \   000029   7003         JNZ     ??CrossCallReturnLabel_8
+    101            {
+    102              HAL_SDA_DIR |= HAL_SDA_BIT;    /* Set SDA pin direction to Output */
+   \   00002B   12....       LCALL   ?Subroutine3 & 0xFFFF
+    103              HAL_SDA_PORT &= ~(HAL_SDA_BIT);
+    104            }
+    105            HalI2CDelay();
+   \                     ??CrossCallReturnLabel_8:
+   \   00002E                ; Setup parameters for call to function HalI2CDelay
+   \   00002E   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+    106            HAL_SCL_DIR &= ~(HAL_SCL_BIT);    /* Set SCL pin direction to Input */
+   \   000031   53FFFE       ANL     0xff,#0xfe
+    107            HalI2CDelay();
+   \   000034                ; Setup parameters for call to function HalI2CDelay
+   \   000034   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+    108            HAL_SCL_DIR |= HAL_SCL_BIT;    /* Set SCL pin direction to Output */
+   \   000037   12....       LCALL   ?Subroutine2 & 0xFFFF
+    109            HAL_SCL_PORT &= ~(HAL_SCL_BIT);
+    110          	
+    111            return ucRet;
+   \                     ??CrossCallReturnLabel_2:
+   \   00003A   80..         SJMP    ?Subroutine1
+   \   00003C                REQUIRE P0DIR
+   \   00003C                REQUIRE P2DIR
+   \   00003C                REQUIRE _A_P0
+   \   00003C                REQUIRE _A_P2
+    112          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   EE           MOV     A,R6
+   \   000001   F9           MOV     R1,A
+   \   000002                REQUIRE ??Subroutine4_0
+   \   000002                ; // Fall through to label ??Subroutine4_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine4_0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    113          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    114          uint8 HalSHT30I2cWriteOneByte(uint8 Dat)
+   \                     HalSHT30I2cWriteOneByte:
+    115          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    116            uint8 i;
+    117          
+    118            for(i = 0; i < 8; i++)
+   \   000007   7E08         MOV     R6,#0x8
+    119            {
+    120              HAL_SCL_DIR |= HAL_SCL_BIT;    /* Set SCL pin direction to Output */
+   \                     ??HalSHT30I2cWriteOneByte_0:
+   \   000009   12....       LCALL   ?Subroutine2 & 0xFFFF
+    121              HAL_SCL_PORT &= ~(HAL_SCL_BIT);
+    122              HalI2CDelay();
+   \                     ??CrossCallReturnLabel_3:
+   \   00000C                ; Setup parameters for call to function HalI2CDelay
+   \   00000C   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+    123              if(Dat & 0x80)
+   \   00000F   EF           MOV     A,R7
+   \   000010   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000012   5005         JNC     ??HalSHT30I2cWriteOneByte_1
+    124              {
+    125                HAL_SDA_DIR &= ~(HAL_SDA_BIT);    /* Set SDA pin direction to Input */
+   \   000014   53FDEF       ANL     0xfd,#0xef
+   \   000017   8003         SJMP    ??CrossCallReturnLabel_9
+    126              }
+    127              else
+    128              {
+    129                HAL_SDA_DIR |= HAL_SDA_BIT;    /* Set SDA pin direction to Output */
+   \                     ??HalSHT30I2cWriteOneByte_1:
+   \   000019   12....       LCALL   ?Subroutine3 & 0xFFFF
+    130                HAL_SDA_PORT &= ~(HAL_SDA_BIT);
+    131              }
+    132              Dat<<=1;
+   \                     ??CrossCallReturnLabel_9:
+   \   00001C   C3           CLR     C
+   \   00001D   33           RLC     A
+   \   00001E   FF           MOV     R7,A
+    133              HalI2CDelay();
+   \   00001F                ; Setup parameters for call to function HalI2CDelay
+   \   00001F   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+    134              HAL_SCL_DIR &= ~(HAL_SCL_BIT);    /* Set SCL pin direction to Input */
+   \   000022   53FFFE       ANL     0xff,#0xfe
+    135              HalI2CDelay();
+   \   000025                ; Setup parameters for call to function HalI2CDelay
+   \   000025   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+    136            }
+   \   000028   1E           DEC     R6
+   \   000029   EE           MOV     A,R6
+   \   00002A   70DD         JNZ     ??HalSHT30I2cWriteOneByte_0
+    137            HAL_SCL_DIR |= HAL_SCL_BIT;    /* Set SCL pin direction to Output */
+   \   00002C   12....       LCALL   ?Subroutine2 & 0xFFFF
+    138            HAL_SCL_PORT &= ~(HAL_SCL_BIT);
+    139            HalI2CDelay();
+   \                     ??CrossCallReturnLabel_4:
+   \   00002F                ; Setup parameters for call to function HalI2CDelay
+   \   00002F   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+    140            HAL_SDA_DIR &= ~(HAL_SDA_BIT);    /* Set SDA pin direction to Input */
+   \   000032   53FDEF       ANL     0xfd,#0xef
+    141            HalI2CDelay();
+   \   000035                ; Setup parameters for call to function HalI2CDelay
+   \   000035   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+    142            HAL_SCL_DIR &= ~(HAL_SCL_BIT);    /* Set SCL pin direction to Input */
+   \   000038   53FFFE       ANL     0xff,#0xfe
+    143            HalI2CDelay();
+   \   00003B                ; Setup parameters for call to function HalI2CDelay
+   \   00003B   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+    144            if(HAL_SDA_PORT & HAL_SDA_BIT)// err
+   \   00003E   A284         MOV     C,0x80.4
+   \   000040   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000043   5004         JNC     ??HalSHT30I2cWriteOneByte_2
+    145            {
+    146              HAL_SCL_DIR |= HAL_SCL_BIT;    /* Set SCL pin direction to Output */
+    147              HAL_SCL_PORT &= ~(HAL_SCL_BIT);
+    148              return(1);
+   \   000045   7901         MOV     R1,#0x1
+   \   000047   8005         SJMP    ??HalSHT30I2cWriteOneByte_3
+    149            }
+    150            HAL_SCL_DIR |= HAL_SCL_BIT;    /* Set SCL pin direction to Output */
+    151            HAL_SCL_PORT &= ~(HAL_SCL_BIT);
+    152            HalI2CDelay();
+   \                     ??HalSHT30I2cWriteOneByte_2:
+   \   000049                ; Setup parameters for call to function HalI2CDelay
+   \   000049   12....       LCALL   ??HalI2CDelay?relay  ; Banked call to: HalI2CDelay
+    153            return(0);// success
+   \   00004C   7900         MOV     R1,#0x0
+   \                     ??HalSHT30I2cWriteOneByte_3:
+   \   00004E   80..         SJMP    ??Subroutine4_0
+   \   000050                REQUIRE P2DIR
+   \   000050                REQUIRE _A_P2
+   \   000050                REQUIRE P0DIR
+   \   000050                REQUIRE _A_P0
+    154          }
+    155          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    156          uint8 HalSHT30WriteCmd(uint8 TMP_MSB, uint8 TMP_LSB)
+   \                     HalSHT30WriteCmd:
+    157          {
+   \   000000                REQUIRE ?V0
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+    158            uint8 Ret;
+    159            
+    160            HalSHT30I2cStart();
+   \   000009                ; Setup parameters for call to function HalSHT30I2cStart
+   \   000009   12....       LCALL   ??HalSHT30I2cStart?relay; Banked call to: HalSHT30I2cStart
+    161            
+    162            Ret = HalSHT30I2cWriteOneByte(HAL_SHT30_I2C_ADDR);
+   \   00000C                ; Setup parameters for call to function HalSHT30I2cWriteOneByte
+   \   00000C   7988         MOV     R1,#-0x78
+   \   00000E   12....       LCALL   ??HalSHT30I2cWriteOneByte?relay; Banked call to: HalSHT30I2cWriteOneByte
+   \   000011   E9           MOV     A,R1
+   \   000012   FE           MOV     R6,A
+    163            
+    164            if(Ret != 0)
+   \   000013   7012         JNZ     ??HalSHT30WriteCmd_0
+    165            {
+    166              HalSHT30I2cStop();
+    167              return(Ret);
+    168            }
+    169            
+    170            Ret = HalSHT30I2cWriteOneByte(TMP_MSB);
+   \   000015                ; Setup parameters for call to function HalSHT30I2cWriteOneByte
+   \   000015   A9..         MOV     R1,?V0
+   \   000017   12....       LCALL   ??HalSHT30I2cWriteOneByte?relay; Banked call to: HalSHT30I2cWriteOneByte
+   \   00001A   E9           MOV     A,R1
+   \   00001B   FE           MOV     R6,A
+    171            
+    172            if(Ret != 0)
+   \   00001C   7009         JNZ     ??HalSHT30WriteCmd_0
+    173            {
+    174              HalSHT30I2cStop();
+    175              return(Ret);
+    176            }
+    177            
+    178            Ret = HalSHT30I2cWriteOneByte(TMP_LSB);
+   \   00001E                ; Setup parameters for call to function HalSHT30I2cWriteOneByte
+   \   00001E   EF           MOV     A,R7
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??HalSHT30I2cWriteOneByte?relay; Banked call to: HalSHT30I2cWriteOneByte
+   \   000023   E9           MOV     A,R1
+   \   000024   FE           MOV     R6,A
+    179            
+    180            if(Ret != 0)
+   \   000025   6007         JZ      ??HalSHT30WriteCmd_1
+    181            {
+    182              HalSHT30I2cStop();
+   \                     ??HalSHT30WriteCmd_0:
+   \   000027                ; Setup parameters for call to function HalSHT30I2cStop
+   \   000027   12....       LCALL   ??HalSHT30I2cStop?relay; Banked call to: HalSHT30I2cStop
+    183              return(Ret);
+   \   00002A   EE           MOV     A,R6
+   \   00002B   F9           MOV     R1,A
+   \   00002C   8002         SJMP    ??HalSHT30WriteCmd_2
+    184            }
+    185            
+    186            return(0);// success
+   \                     ??HalSHT30WriteCmd_1:
+   \   00002E   7900         MOV     R1,#0x0
+   \                     ??HalSHT30WriteCmd_2:
+   \   000030   80..         SJMP    ??Subroutine4_0
+    187          }
+    188          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    189          uint8 HalSHT30Init(void)
+   \                     HalSHT30Init:
+    190          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    191            uint8 Ret;
+    192            
+    193            Ret = HalSHT30WriteCmd(HAL_SHT30_PERIODIC_CMD_MSB, HAL_SHT30_PERIODIC_CMD_LSB);
+   \   000005                ; Setup parameters for call to function HalSHT30WriteCmd
+   \   000005   7A2D         MOV     R2,#0x2d
+   \   000007   7921         MOV     R1,#0x21
+   \   000009   12....       LCALL   ??HalSHT30WriteCmd?relay; Banked call to: HalSHT30WriteCmd
+   \   00000C   E9           MOV     A,R1
+   \   00000D   FE           MOV     R6,A
+    194            if(Ret != 0)
+   \   00000E   6009         JZ      ??HalSHT30Init_0
+    195            {
+    196              Ret = HalSHT30WriteCmd(HAL_SHT30_PERIODIC_CMD_MSB, HAL_SHT30_PERIODIC_CMD_LSB);
+   \   000010                ; Setup parameters for call to function HalSHT30WriteCmd
+   \   000010   7A2D         MOV     R2,#0x2d
+   \   000012   7921         MOV     R1,#0x21
+   \   000014   12....       LCALL   ??HalSHT30WriteCmd?relay; Banked call to: HalSHT30WriteCmd
+   \   000017   E9           MOV     A,R1
+   \   000018   FE           MOV     R6,A
+    197            }
+    198            HalSHT30I2cStop();
+   \                     ??HalSHT30Init_0:
+   \   000019                ; Setup parameters for call to function HalSHT30I2cStop
+   \   000019   12....       LCALL   ??HalSHT30I2cStop?relay; Banked call to: HalSHT30I2cStop
+    199            return(Ret);
+   \   00001C   80..         SJMP    ?Subroutine1
+    200          }
+    201          
+    202          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    203          uint8 HalSHT30ReadData(void)
+   \                     HalSHT30ReadData:
+    204          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+    205              //uint8 Ret, m;
+    206              uint8 Ret;
+    207              uint16 T, H;
+    208              //int16 x;
+    209          
+    210            
+    211              Ret = HalSHT30WriteCmd(0xE0, 0x00);
+   \   000005                ; Setup parameters for call to function HalSHT30WriteCmd
+   \   000005   7A00         MOV     R2,#0x0
+   \   000007   79E0         MOV     R1,#-0x20
+   \   000009   12....       LCALL   ??HalSHT30WriteCmd?relay; Banked call to: HalSHT30WriteCmd
+   \   00000C   E9           MOV     A,R1
+   \   00000D   FE           MOV     R6,A
+    212              if(Ret != 0)
+   \   00000E   6003         JZ      $+5
+   \   000010   02....       LJMP    ??HalSHT30ReadData_0 & 0xFFFF
+    213              {
+    214                return(Ret);
+    215              }
+    216            
+    217              HalSHT30I2cStart();
+   \   000013                ; Setup parameters for call to function HalSHT30I2cStart
+   \   000013   12....       LCALL   ??HalSHT30I2cStart?relay; Banked call to: HalSHT30I2cStart
+    218              Ret = HalSHT30I2cWriteOneByte(HAL_SHT30_I2C_ADDR | 0x01);
+   \   000016                ; Setup parameters for call to function HalSHT30I2cWriteOneByte
+   \   000016   7989         MOV     R1,#-0x77
+   \   000018   12....       LCALL   ??HalSHT30I2cWriteOneByte?relay; Banked call to: HalSHT30I2cWriteOneByte
+   \   00001B   E9           MOV     A,R1
+   \   00001C   FE           MOV     R6,A
+    219              if(Ret != 0)
+   \   00001D   6008         JZ      ??HalSHT30ReadData_1
+    220              {
+    221                HalSHT30I2cStop();
+   \   00001F                ; Setup parameters for call to function HalSHT30I2cStop
+   \   00001F   12....       LCALL   ??HalSHT30I2cStop?relay; Banked call to: HalSHT30I2cStop
+    222                return(Ret);
+   \   000022   EE           MOV     A,R6
+   \   000023   F9           MOV     R1,A
+   \   000024   02....       LJMP    ??HalSHT30ReadData_0 & 0xFFFF
+    223              }
+    224            
+    225              T = (uint16)HalSHT30I2cReadOneByte(HAL_SHT30_I2C_ACK);
+   \                     ??HalSHT30ReadData_1:
+   \   000027                ; Setup parameters for call to function HalSHT30I2cReadOneByte
+   \   000027   7900         MOV     R1,#0x0
+   \   000029   12....       LCALL   ??HalSHT30I2cReadOneByte?relay; Banked call to: HalSHT30I2cReadOneByte
+   \   00002C   E9           MOV     A,R1
+   \   00002D   F5..         MOV     ?V1,A
+    226              T <<= 8;
+    227              T |= (uint16)HalSHT30I2cReadOneByte(HAL_SHT30_I2C_ACK);
+   \   00002F                ; Setup parameters for call to function HalSHT30I2cReadOneByte
+   \   00002F   7900         MOV     R1,#0x0
+   \   000031   12....       LCALL   ??HalSHT30I2cReadOneByte?relay; Banked call to: HalSHT30I2cReadOneByte
+   \   000034   E9           MOV     A,R1
+   \   000035   F5..         MOV     ?V0,A
+    228              HalSHT30I2cReadOneByte(HAL_SHT30_I2C_ACK);//  CRC
+   \   000037                ; Setup parameters for call to function HalSHT30I2cReadOneByte
+   \   000037   7900         MOV     R1,#0x0
+   \   000039   12....       LCALL   ??HalSHT30I2cReadOneByte?relay; Banked call to: HalSHT30I2cReadOneByte
+    229            
+    230              H = (uint16)HalSHT30I2cReadOneByte(HAL_SHT30_I2C_ACK);
+   \   00003C                ; Setup parameters for call to function HalSHT30I2cReadOneByte
+   \   00003C   7900         MOV     R1,#0x0
+   \   00003E   12....       LCALL   ??HalSHT30I2cReadOneByte?relay; Banked call to: HalSHT30I2cReadOneByte
+   \   000041   E9           MOV     A,R1
+   \   000042   FF           MOV     R7,A
+    231              H <<= 8;
+    232              H |= (uint16)HalSHT30I2cReadOneByte(HAL_SHT30_I2C_ACK);
+   \   000043                ; Setup parameters for call to function HalSHT30I2cReadOneByte
+   \   000043   7900         MOV     R1,#0x0
+   \   000045   12....       LCALL   ??HalSHT30I2cReadOneByte?relay; Banked call to: HalSHT30I2cReadOneByte
+   \   000048   E9           MOV     A,R1
+   \   000049   FE           MOV     R6,A
+    233              HalSHT30I2cReadOneByte(HAL_SHT30_I2C_NACK);//  CRC
+   \   00004A                ; Setup parameters for call to function HalSHT30I2cReadOneByte
+   \   00004A   7901         MOV     R1,#0x1
+   \   00004C   12....       LCALL   ??HalSHT30I2cReadOneByte?relay; Banked call to: HalSHT30I2cReadOneByte
+    234            
+    235              HalSHT30I2cStop();
+   \   00004F                ; Setup parameters for call to function HalSHT30I2cStop
+   \   00004F   12....       LCALL   ??HalSHT30I2cStop?relay; Banked call to: HalSHT30I2cStop
+    236              
+    237              Temperature = (int16)(((uint32)T * 1750)/65535) - 450;//   *0.1c
+   \   000052   E4           CLR     A
+   \   000053   F5..         MOV     ?V2,A
+   \   000055   F5..         MOV     ?V3,A
+   \   000057   90....       MOV     DPTR,#__Constant_6d6
+   \   00005A   78..         MOV     R0,#?V4
+   \   00005C   12....       LCALL   ?L_MOV_X
+   \   00005F   78..         MOV     R0,#?V0
+   \   000061   79..         MOV     R1,#?V4
+   \   000063   12....       LCALL   ?L_MUL
+   \   000066   90....       MOV     DPTR,#__Constant_ffff
+   \   000069   78..         MOV     R0,#?V4
+   \   00006B   12....       LCALL   ?L_MOV_X
+   \   00006E   78..         MOV     R0,#?V0
+   \   000070   79..         MOV     R1,#?V4
+   \   000072   12....       LCALL   ?UL_DIV_MOD
+   \   000075   E5..         MOV     A,?V0
+   \   000077   243E         ADD     A,#0x3e
+   \   000079   F8           MOV     R0,A
+   \   00007A   E5..         MOV     A,?V1
+   \   00007C   34FE         ADDC    A,#-0x2
+   \   00007E   F9           MOV     R1,A
+   \   00007F   90....       MOV     DPTR,#Temperature
+   \   000082   E8           MOV     A,R0
+   \   000083   F0           MOVX    @DPTR,A
+   \   000084   A3           INC     DPTR
+   \   000085   E9           MOV     A,R1
+   \   000086   F0           MOVX    @DPTR,A
+    238              Humidity = (uint8)( (100 * (uint32)H) / 65535 );//  0~100%
+   \   000087   EF           MOV     A,R7
+   \   000088   FB           MOV     R3,A
+   \   000089   EE           MOV     A,R6
+   \   00008A   F5..         MOV     ?V0,A
+   \   00008C   EB           MOV     A,R3
+   \   00008D   F5..         MOV     ?V1,A
+   \   00008F   E4           CLR     A
+   \   000090   F5..         MOV     ?V2,A
+   \   000092   F5..         MOV     ?V3,A
+   \   000094   90....       MOV     DPTR,#__Constant_64
+   \   000097   78..         MOV     R0,#?V4
+   \   000099   12....       LCALL   ?L_MOV_X
+   \   00009C   78..         MOV     R0,#?V0
+   \   00009E   79..         MOV     R1,#?V4
+   \   0000A0   12....       LCALL   ?L_MUL
+   \   0000A3   90....       MOV     DPTR,#__Constant_ffff
+   \   0000A6   78..         MOV     R0,#?V4
+   \   0000A8   12....       LCALL   ?L_MOV_X
+   \   0000AB   78..         MOV     R0,#?V0
+   \   0000AD   79..         MOV     R1,#?V4
+   \   0000AF   12....       LCALL   ?UL_DIV_MOD
+   \   0000B2   E5..         MOV     A,?V0
+   \   0000B4   90....       MOV     DPTR,#Humidity
+   \   0000B7   F0           MOVX    @DPTR,A
+    239          	return 0;
+   \   0000B8   7900         MOV     R1,#0x0
+   \                     ??HalSHT30ReadData_0:
+   \   0000BA   7F08         MOV     R7,#0x8
+   \   0000BC   02....       LJMP    ?BANKED_LEAVE_XDATA
+    240              /*
+    241              x = (int16)(((uint32)T * 175)/65535) - 45;//   *1c
+    242              if(x<0)
+    243              {
+    244                Temperature[0] = '-';
+    245                m = (uint8)(x*(-1));
+    246              }
+    247              else
+    248              {
+    249                Temperature[0] = '+';
+    250                m = (uint8)x;
+    251              }
+    252              Temperature[1] = (m / 100)+'0';
+    253              m %= 100;
+    254              Temperature[2] = (m / 10)+'0';
+    255              Temperature[3] = (m % 10)+'0';
+    256              Temperature[4] = 'C';
+    257              Temperature[5] = '\0';
+    258              
+    259              
+    260              m = (uint8)( (100 * (uint32)H) / 65535 );//  0~100%
+    261              Humidity[0] = (m / 100)+'0';
+    262              m %= 100;
+    263              Humidity[1] = (m / 10)+'0';
+    264              Humidity[2] = (m % 10)+'0';
+    265              Humidity[3] = '%';
+    266              Humidity[4] = '\0';
+    267              */
+    268              
+    269          }
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_6d6:
+   \   000000   D6060000     DD 1750
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_ffff:
+   \   000000   FFFF0000     DD 65535
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_64:
+   \   000000   64000000     DD 100
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalI2CDelay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalI2CDelay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalSHT30I2cStart?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalSHT30I2cStart
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalSHT30I2cStop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalSHT30I2cStop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalSHT30I2cReadOneByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalSHT30I2cReadOneByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalSHT30I2cWriteOneByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalSHT30I2cWriteOneByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalSHT30WriteCmd?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalSHT30WriteCmd
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalSHT30Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalSHT30Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalSHT30ReadData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalSHT30ReadData
+    270          
+    271          
+    272          
+    273          
+    274          
+    275          
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0      9   HalI2CDelay
+      0     25   HalSHT30I2cReadOneByte
+        0      9   -> HalI2CDelay
+      2     16   HalSHT30I2cStart
+        2      0   -> HalI2CDelay
+      2     16   HalSHT30I2cStop
+        2      0   -> HalI2CDelay
+      0     25   HalSHT30I2cWriteOneByte
+        0      9   -> HalI2CDelay
+      0      9   HalSHT30Init
+        0      9   -> HalSHT30I2cStop
+        0      9   -> HalSHT30WriteCmd
+      0     16   HalSHT30ReadData
+        0     16   -> HalSHT30I2cReadOneByte
+        0     16   -> HalSHT30I2cStart
+        0     16   -> HalSHT30I2cStop
+        0     16   -> HalSHT30I2cWriteOneByte
+        0     16   -> HalSHT30WriteCmd
+      0     25   HalSHT30WriteCmd
+        0      9   -> HalSHT30I2cStart
+        0      9   -> HalSHT30I2cStop
+        0      9   -> HalSHT30I2cWriteOneByte
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??HalI2CDelay?relay
+       6  ??HalSHT30I2cReadOneByte?relay
+       6  ??HalSHT30I2cStart?relay
+       6  ??HalSHT30I2cStop?relay
+       6  ??HalSHT30I2cWriteOneByte?relay
+       6  ??HalSHT30Init?relay
+       6  ??HalSHT30ReadData?relay
+       6  ??HalSHT30WriteCmd?relay
+       5  ??Subroutine4_0
+       7  ?Subroutine0
+       2  ?Subroutine1
+       6  ?Subroutine2
+       6  ?Subroutine3
+       1  CollectCount
+      18  HalI2CDelay
+      60  HalSHT30I2cReadOneByte
+      28  HalSHT30I2cStart
+      21  HalSHT30I2cStop
+      80  HalSHT30I2cWriteOneByte
+      30  HalSHT30Init
+     191  HalSHT30ReadData
+      50  HalSHT30WriteCmd
+       1  Humidity
+       1  P0DIR
+       1  P0SEL
+       1  P2DIR
+       1  P2SEL
+       2  Temperature
+       1  _A_P0
+       1  _A_P2
+       4  __Constant_64
+       4  __Constant_6d6
+       4  __Constant_ffff
+
+ 
+ 504 bytes in segment BANKED_CODE
+  48 bytes in segment BANK_RELAYS
+   6 bytes in segment SFR_AN
+  12 bytes in segment XDATA_ROM_C
+   4 bytes in segment XDATA_Z
+ 
+ 552 bytes of CODE  memory
+   0 bytes of CONST memory (+ 12 bytes shared)
+   0 bytes of DATA  memory (+  6 bytes shared)
+   4 bytes of XDATA memory
+
+Errors: none
+Warnings: none

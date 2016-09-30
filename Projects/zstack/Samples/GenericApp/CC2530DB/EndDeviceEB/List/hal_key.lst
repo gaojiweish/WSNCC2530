@@ -1,0 +1,1018 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V9.10.1.2146 for 8051                02/Sep/2016  18:30:57
+# Copyright 2004-2014 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Components\hal\target\CC2530EB\hal_key.c
+#    Command line       =  
+#        -f "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f "C:\Texas
+#        Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440) "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Components\hal\target\CC2530EB\hal_key.c" -D NWK_AUTO_POLL -D
+#        ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D HAL_UART=TRUE -D
+#        HAL_UART_ISR=1 -D HAL_UART_DMA=2 -D xLCD_SUPPORTED=DEBUG -D
+#        xPOWER_SAVING -lC "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\EndDeviceEB\List\"
+#        -lA "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\EndDeviceEB\List\"
+#        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\EndDeviceEB\Obj\"
+#        -e --no_code_motion --debug --core=plain --dptr=16,1
+#        --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\" -I "C:\Texas
+#        Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\Source\" -I
+#        "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes
+#    List file          =  
+#        C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\EndDeviceEB\List\hal_key.lst
+#    Object file        =  
+#        C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\EndDeviceEB\Obj\hal_key.r51
+#
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Mesh v1.0.0\Components\hal\target\CC2530EB\hal_key.c
+      1          /**************************************************************************************************
+      2            Filename:       hal_key.c
+      3            Revised:        $Date: 2010-09-15 19:02:45 -0700 (Wed, 15 Sep 2010) $
+      4            Revision:       $Revision: 23815 $
+      5          
+      6            Description:    This file contains the interface to the HAL KEY Service.
+      7          
+      8          
+      9            Copyright 2006-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          /*********************************************************************
+     40           NOTE: If polling is used, the hal_driver task schedules the KeyRead()
+     41                 to occur every 100ms.  This should be long enough to naturally
+     42                 debounce the keys.  The KeyRead() function remembers the key
+     43                 state of the previous poll and will only return a non-zero
+     44                 value if the key state changes.
+     45          
+     46           NOTE: If interrupts are used, the KeyRead() function is scheduled
+     47                 25ms after the interrupt occurs by the ISR.  This delay is used
+     48                 for key debouncing.  The ISR disables any further Key interrupt
+     49                 until KeyRead() is executed.  KeyRead() will re-enable Key
+     50                 interrupts after executing.  Unlike polling, when interrupts
+     51                 are enabled, the previous key state is not remembered.  This
+     52                 means that KeyRead() will return the current state of the keys
+     53                 (not a change in state of the keys).
+     54          
+     55           NOTE: If interrupts are used, the KeyRead() fucntion is scheduled by
+     56                 the ISR.  Therefore, the joystick movements will only be detected
+     57                 during a pushbutton interrupt caused by S1 or the center joystick
+     58                 pushbutton.
+     59          
+     60           NOTE: When a switch like S1 is pushed, the S1 signal goes from a normally
+     61                 high state to a low state.  This transition is typically clean.  The
+     62                 duration of the low state is around 200ms.  When the signal returns
+     63                 to the high state, there is a high likelihood of signal bounce, which
+     64                 causes a unwanted interrupts.  Normally, we would set the interrupt
+     65                 edge to falling edge to generate an interrupt when S1 is pushed, but
+     66                 because of the signal bounce, it is better to set the edge to rising
+     67                 edge to generate an interrupt when S1 is released.  The debounce logic
+     68                 can then filter out the signal bounce.  The result is that we typically
+     69                 get only 1 interrupt per button push.  This mechanism is not totally
+     70                 foolproof because occasionally, signal bound occurs during the falling
+     71                 edge as well.  A similar mechanism is used to handle the joystick
+     72                 pushbutton on the DB.  For the EB, we do not have independent control
+     73                 of the interrupt edge for the S1 and center joystick pushbutton.  As
+     74                 a result, only one or the other pushbuttons work reasonably well with
+     75                 interrupts.  The default is the make the S1 switch on the EB work more
+     76                 reliably.
+     77          
+     78          *********************************************************************/
+     79          
+     80          /**************************************************************************************************
+     81           *                                            INCLUDES
+     82           **************************************************************************************************/
+     83          #include "hal_mcu.h"
+
+   \                                 In  segment SFR_AN, at 0x8a
+   \   unsigned char volatile __sfr P1IFG
+   \                     P1IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8c
+   \   unsigned char volatile __sfr PICTL
+   \                     PICTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8d
+   \   unsigned char volatile __sfr P1IEN
+   \                     P1IEN:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9a
+   \   unsigned char volatile __sfr IEN2
+   \                     IEN2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc0
+   \   union <unnamed> volatile __sfr _A_IRCON
+   \                     _A_IRCON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe8
+   \   union <unnamed> volatile __sfr _A_IRCON2
+   \                     _A_IRCON2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     84          #include "hal_defs.h"
+     85          #include "hal_types.h"
+     86          #include "hal_board.h"
+     87          #include "hal_drivers.h"
+     88          #include "hal_adc.h"
+     89          #include "hal_key.h"
+     90          #include "osal.h"
+     91          
+     92          #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+     93          
+     94          /**************************************************************************************************
+     95           *                                              MACROS
+     96           **************************************************************************************************/
+     97          
+     98          /**************************************************************************************************
+     99           *                                            CONSTANTS
+    100           **************************************************************************************************/
+    101          #define HAL_KEY_RISING_EDGE   0
+    102          #define HAL_KEY_FALLING_EDGE  1
+    103          
+    104          #define HAL_KEY_DEBOUNCE_VALUE  25
+    105          
+    106          /* CPU port interrupt */
+    107          #define HAL_KEY_CPU_PORT_0_IF P0IF
+    108          #define HAL_KEY_CPU_PORT_1_IF P1IF
+    109          #define HAL_KEY_CPU_PORT_2_IF P2IF
+    110          
+    111          /* SW_6 is at P1.4 */
+    112          #define HAL_KEY_SW_6_PORT   P1
+    113          #define HAL_KEY_SW_6_BIT    BV(4)
+    114          #define HAL_KEY_SW_6_SEL    P1SEL
+    115          #define HAL_KEY_SW_6_DIR    P1DIR
+    116          
+    117          /* edge interrupt */
+    118          #define HAL_KEY_SW_6_EDGEBIT  BV(2)
+    119          #define HAL_KEY_SW_6_EDGE     HAL_KEY_FALLING_EDGE
+    120          
+    121          
+    122          /* SW_6 interrupts */
+    123          #define HAL_KEY_SW_6_IEN      IEN2  /* CPU interrupt mask register */
+    124          #define HAL_KEY_SW_6_IENBIT   BV(4) /* Mask bit for all of Port_0 */
+    125          #define HAL_KEY_SW_6_ICTL     P1IEN /* Port Interrupt Control register */
+    126          #define HAL_KEY_SW_6_ICTLBIT  BV(4) /* P0IEN - P0.1 enable/disable bit */
+    127          #define HAL_KEY_SW_6_PXIFG    P1IFG /* Interrupt flag at source */
+    128          
+    129          /**************************************************************************************************
+    130           *                                            TYPEDEFS
+    131           **************************************************************************************************/
+    132          
+    133          
+    134          /**************************************************************************************************
+    135           *                                        GLOBAL VARIABLES
+    136           **************************************************************************************************/
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    137          static uint8 halKeySavedKeys;     /* used to store previous key state in polling mode */
+   \                     halKeySavedKeys:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    138          static halKeyCBack_t pHalKeyProcessFunction;
+   \                     pHalKeyProcessFunction:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    139          static uint8 HalKeyConfigured;
+   \                     HalKeyConfigured:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    140          bool Hal_KeyIntEnable;            /* interrupt enable/disable flag */
+   \                     Hal_KeyIntEnable:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    141          
+    142          /**************************************************************************************************
+    143           *                                        FUNCTIONS - Local
+    144           **************************************************************************************************/
+    145          void halProcessKeyInterrupt(void);
+    146          
+    147          
+    148          
+    149          /**************************************************************************************************
+    150           *                                        FUNCTIONS - API
+    151           **************************************************************************************************/
+    152          
+    153          
+    154          /**************************************************************************************************
+    155           * @fn      HalKeyInit
+    156           *
+    157           * @brief   Initilize Key Service
+    158           *
+    159           * @param   none
+    160           *
+    161           * @return  None
+    162           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    163          void HalKeyInit( void )
+   \                     HalKeyInit:
+    164          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    165            /* Initialize previous key to 0 */
+    166            halKeySavedKeys = 0;
+   \   000004   90....       MOV     DPTR,#halKeySavedKeys
+   \   000007   E4           CLR     A
+   \   000008   F0           MOVX    @DPTR,A
+    167          
+    168            HAL_KEY_SW_6_SEL &= ~(HAL_KEY_SW_6_BIT);    /* Set pin function to GPIO */
+   \   000009   53F4EF       ANL     0xf4,#0xef
+    169            HAL_KEY_SW_6_DIR &= ~(HAL_KEY_SW_6_BIT);    /* Set pin direction to Input */
+   \   00000C   53FEEF       ANL     0xfe,#0xef
+    170          
+    171            /* Initialize callback function */
+    172            pHalKeyProcessFunction  = NULL;
+   \   00000F   90....       MOV     DPTR,#pHalKeyProcessFunction
+   \   000012   F0           MOVX    @DPTR,A
+   \   000013   A3           INC     DPTR
+   \   000014   F0           MOVX    @DPTR,A
+    173          
+    174            /* Start with key is not configured */
+    175            HalKeyConfigured = FALSE;
+   \   000015   90....       MOV     DPTR,#HalKeyConfigured
+   \   000018   F0           MOVX    @DPTR,A
+    176          }
+   \   000019   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   00001C                REQUIRE P1SEL
+   \   00001C                REQUIRE P1DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    177          
+    178          
+    179          /**************************************************************************************************
+    180           * @fn      HalKeyConfig
+    181           *
+    182           * @brief   Configure the Key serivce
+    183           *
+    184           * @param   interruptEnable - TRUE/FALSE, enable/disable interrupt
+    185           *          cback - pointer to the CallBack function
+    186           *
+    187           * @return  None
+    188           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    189          void HalKeyConfig (bool interruptEnable, halKeyCBack_t cback)
+   \                     HalKeyConfig:
+    190          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    191            /* Enable/Disable Interrupt or */
+    192            Hal_KeyIntEnable = interruptEnable;
+   \   000006   90....       MOV     DPTR,#Hal_KeyIntEnable
+   \   000009   F0           MOVX    @DPTR,A
+    193          
+    194            /* Register the callback fucntion */
+    195            pHalKeyProcessFunction = cback;
+   \   00000A   90....       MOV     DPTR,#pHalKeyProcessFunction
+   \   00000D   EA           MOV     A,R2
+   \   00000E   F0           MOVX    @DPTR,A
+   \   00000F   A3           INC     DPTR
+   \   000010   EB           MOV     A,R3
+   \   000011   F0           MOVX    @DPTR,A
+    196          
+    197            /* Determine if interrupt is enable or not */
+    198            if (Hal_KeyIntEnable)
+   \   000012   90....       MOV     DPTR,#Hal_KeyIntEnable
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   6025         JZ      ??HalKeyConfig_0
+    199            {
+    200              /* Rising/Falling edge configuratinn */
+    201          
+    202              PICTL &= ~(HAL_KEY_SW_6_EDGEBIT);    /* Clear the edge bit */
+   \   000018   538CFB       ANL     0x8c,#0xfb
+    203              /* For falling edge, the bit must be set. */
+    204            #if (HAL_KEY_SW_6_EDGE == HAL_KEY_FALLING_EDGE)
+    205              PICTL |= HAL_KEY_SW_6_EDGEBIT;
+   \   00001B   438C04       ORL     0x8c,#0x4
+    206            #endif
+    207          
+    208              /* Interrupt configuration:
+    209               * - Enable interrupt generation at the port
+    210               * - Enable CPU interrupt
+    211               * - Clear any pending interrupt
+    212               */
+    213              HAL_KEY_SW_6_ICTL |= HAL_KEY_SW_6_ICTLBIT;
+   \   00001E   438D10       ORL     0x8d,#0x10
+    214              HAL_KEY_SW_6_IEN |= HAL_KEY_SW_6_IENBIT;
+   \   000021   439A10       ORL     0x9a,#0x10
+    215              HAL_KEY_SW_6_PXIFG = ~(HAL_KEY_SW_6_BIT);
+   \   000024   758AEF       MOV     0x8a,#-0x11
+    216          
+    217              /* Do this only after the hal_key is configured - to work with sleep stuff */
+    218              if (HalKeyConfigured == TRUE)
+   \   000027   90....       MOV     DPTR,#HalKeyConfigured
+   \   00002A   E0           MOVX    A,@DPTR
+   \   00002B   6401         XRL     A,#0x1
+   \   00002D   7020         JNZ     ??HalKeyConfig_1
+    219              {
+    220                osal_stop_timerEx(Hal_TaskID, HAL_KEY_EVENT);  /* Cancel polling if active */
+   \   00002F                ; Setup parameters for call to function osal_stop_timerEx
+   \   00002F   7A10         MOV     R2,#0x10
+   \   000031   7B00         MOV     R3,#0x0
+   \   000033   90....       MOV     DPTR,#Hal_TaskID
+   \   000036   E0           MOVX    A,@DPTR
+   \   000037   F9           MOV     R1,A
+   \   000038   12....       LCALL   ??osal_stop_timerEx?relay; Banked call to: osal_stop_timerEx
+   \   00003B   8012         SJMP    ??HalKeyConfig_1
+    221              }
+    222            }
+    223            else    /* Interrupts NOT enabled */
+    224            {
+    225              HAL_KEY_SW_6_ICTL &= ~(HAL_KEY_SW_6_ICTLBIT); /* don't generate interrupt */
+   \                     ??HalKeyConfig_0:
+   \   00003D   538DEF       ANL     0x8d,#0xef
+    226              HAL_KEY_SW_6_IEN &= ~(HAL_KEY_SW_6_IENBIT);   /* Clear interrupt enable bit */
+   \   000040   539AEF       ANL     0x9a,#0xef
+    227          
+    228              osal_set_event(Hal_TaskID, HAL_KEY_EVENT);
+   \   000043                ; Setup parameters for call to function osal_set_event
+   \   000043   7A10         MOV     R2,#0x10
+   \   000045   7B00         MOV     R3,#0x0
+   \   000047   90....       MOV     DPTR,#Hal_TaskID
+   \   00004A   E0           MOVX    A,@DPTR
+   \   00004B   F9           MOV     R1,A
+   \   00004C   12....       LCALL   ??osal_set_event?relay; Banked call to: osal_set_event
+    229            }
+    230          
+    231            /* Key now is configured */
+    232            HalKeyConfigured = TRUE;
+   \                     ??HalKeyConfig_1:
+   \   00004F   90....       MOV     DPTR,#HalKeyConfigured
+   \   000052   7401         MOV     A,#0x1
+   \   000054   F0           MOVX    @DPTR,A
+    233          }
+   \   000055   FF           MOV     R7,A
+   \   000056   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000059                REQUIRE PICTL
+   \   000059                REQUIRE P1IEN
+   \   000059                REQUIRE IEN2
+   \   000059                REQUIRE P1IFG
+    234          
+    235          
+    236          /**************************************************************************************************
+    237           * @fn      HalKeyRead
+    238           *
+    239           * @brief   Read the current value of a key
+    240           *
+    241           * @param   None
+    242           *
+    243           * @return  keys - current keys status
+    244           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    245          uint8 HalKeyRead ( void )
+   \                     HalKeyRead:
+    246          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    247            uint8 keys = 0;
+   \   000000   7900         MOV     R1,#0x0
+    248          
+    249            if (HAL_PUSH_BUTTON1())
+   \   000002   A294         MOV     C,0x90.4
+   \   000004   5002         JNC     ??HalKeyRead_0
+    250            {
+    251              keys |= HAL_KEY_SW_6;
+   \   000006   7920         MOV     R1,#0x20
+    252            }
+    253            return keys;
+   \                     ??HalKeyRead_0:
+   \   000008   02....       LJMP    ?BRET
+   \   00000B                REQUIRE _A_P1
+    254          }
+    255          
+    256          
+    257          /**************************************************************************************************
+    258           * @fn      HalKeyPoll
+    259           *
+    260           * @brief   Called by hal_driver to poll the keys
+    261           *
+    262           * @param   None
+    263           *
+    264           * @return  None
+    265           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    266          void HalKeyPoll (void)
+   \                     HalKeyPoll:
+    267          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    268            uint8 keys = 0;
+   \   000004   7900         MOV     R1,#0x0
+    269            if (HAL_PUSH_BUTTON1())
+   \   000006   A294         MOV     C,0x90.4
+   \   000008   5002         JNC     ??HalKeyPoll_0
+    270            {
+    271              keys |= HAL_KEY_SW_6;
+   \   00000A   7920         MOV     R1,#0x20
+    272            }
+    273            /* If interrupts are not enabled, previous key status and current key status
+    274             * are compared to find out if a key has changed status.
+    275             */
+    276            if (!Hal_KeyIntEnable)
+   \                     ??HalKeyPoll_0:
+   \   00000C   90....       MOV     DPTR,#Hal_KeyIntEnable
+   \   00000F   E0           MOVX    A,@DPTR
+   \   000010   7009         JNZ     ??HalKeyPoll_1
+    277            {
+    278              if (keys == halKeySavedKeys)
+   \   000012   90....       MOV     DPTR,#halKeySavedKeys
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   69           XRL     A,R1
+   \   000017   6021         JZ      ??HalKeyPoll_2
+    279              {
+    280                /* Exit - since no keys have changed */
+    281                return;
+    282              }
+    283              /* Store the current keys for comparation next time */
+    284              halKeySavedKeys = keys;
+   \   000019   E9           MOV     A,R1
+   \   00001A   F0           MOVX    @DPTR,A
+    285            }
+    286            else
+    287            {
+    288              /* Key interrupt handled here */
+    289            }
+    290          
+    291            /* Invoke Callback if new keys were depressed */
+    292            if (keys && (pHalKeyProcessFunction))
+   \                     ??HalKeyPoll_1:
+   \   00001B   E9           MOV     A,R1
+   \   00001C   601C         JZ      ??HalKeyPoll_2
+   \   00001E   90....       MOV     DPTR,#pHalKeyProcessFunction
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   FA           MOV     R2,A
+   \   000023   A3           INC     DPTR
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   FB           MOV     R3,A
+   \   000026   EA           MOV     A,R2
+   \   000027   4B           ORL     A,R3
+   \   000028   6010         JZ      ??HalKeyPoll_2
+    293            {
+    294              (pHalKeyProcessFunction) (keys, HAL_KEY_STATE_NORMAL);
+   \   00002A                ; Setup parameters for indirect call
+   \   00002A   7A00         MOV     R2,#0x0
+   \   00002C   90....       MOV     DPTR,#pHalKeyProcessFunction
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   F8           MOV     R0,A
+   \   000031   A3           INC     DPTR
+   \   000032   E0           MOVX    A,@DPTR
+   \   000033   F583         MOV     DPH,A
+   \   000035   8882         MOV     DPL,R0
+   \   000037   12....       LCALL   ?CALL_IND
+    295            }
+    296          }
+   \                     ??HalKeyPoll_2:
+   \   00003A   80..         SJMP    ?Subroutine0
+   \   00003C                REQUIRE _A_P1
+    297          
+    298          /**************************************************************************************************
+    299           * @fn      halProcessKeyInterrupt
+    300           *
+    301           * @brief   Checks to see if it's a valid key interrupt, saves interrupt driven key states for
+    302           *          processing by HalKeyRead(), and debounces keys by scheduling HalKeyRead() 25ms later.
+    303           *
+    304           * @param
+    305           *
+    306           * @return
+    307           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    308          void halProcessKeyInterrupt (void)
+   \                     halProcessKeyInterrupt:
+    309          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    310            bool valid=FALSE;
+    311            
+    312            
+    313            if (HAL_KEY_SW_6_PXIFG & HAL_KEY_SW_6_BIT)  /* Interrupt Flag has been set */
+   \   000004   E58A         MOV     A,0x8a
+   \   000006   A2E4         MOV     C,0xE0 /* A   */.4
+   \   000008   501A         JNC     ??halProcessKeyInterrupt_0
+    314            {
+    315              HAL_KEY_SW_6_PXIFG = ~(HAL_KEY_SW_6_BIT); /* Clear Interrupt Flag */
+   \   00000A   758AEF       MOV     0x8a,#-0x11
+    316              valid = TRUE;
+    317            }
+    318          
+    319            if (valid)
+    320            {
+    321              osal_start_timerEx (Hal_TaskID, HAL_KEY_EVENT, HAL_KEY_DEBOUNCE_VALUE);
+   \   00000D                ; Setup parameters for call to function osal_start_timerEx
+   \   00000D   90....       MOV     DPTR,#__Constant_19
+   \   000010   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   000013   7A10         MOV     R2,#0x10
+   \   000015   7B00         MOV     R3,#0x0
+   \   000017   90....       MOV     DPTR,#Hal_TaskID
+   \   00001A   E0           MOVX    A,@DPTR
+   \   00001B   F9           MOV     R1,A
+   \   00001C   12....       LCALL   ??osal_start_timerEx?relay; Banked call to: osal_start_timerEx
+   \   00001F   7404         MOV     A,#0x4
+   \   000021   12....       LCALL   ?DEALLOC_XSTACK8
+    322            }
+    323          }
+   \                     ??halProcessKeyInterrupt_0:
+   \   000024                REQUIRE ?Subroutine0
+   \   000024                REQUIRE P1IFG
+   \   000024                ; // Fall through to label ?Subroutine0
+    324          
+    325          /**************************************************************************************************
+    326           * @fn      HalKeyEnterSleep
+    327           *
+    328           * @brief  - Get called to enter sleep mode
+    329           *
+    330           * @param
+    331           *
+    332           * @return
+    333           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    334          void HalKeyEnterSleep ( void )
+   \                     HalKeyEnterSleep:
+    335          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    336          }
+   \   000000   02....       LJMP    ?BRET
+    337          
+    338          /**************************************************************************************************
+    339           * @fn      HalKeyExitSleep
+    340           *
+    341           * @brief   - Get called when sleep is over
+    342           *
+    343           * @param
+    344           *
+    345           * @return  - return saved keys
+    346           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    347          uint8 HalKeyExitSleep ( void )
+   \                     HalKeyExitSleep:
+    348          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    349            /* Wake up and read keys */
+    350            return ( HalKeyRead () );
+   \   000004                ; Setup parameters for call to function HalKeyRead
+   \   000004   12....       LCALL   ??HalKeyRead?relay   ; Banked call to: HalKeyRead
+   \   000007   80..         SJMP    ?Subroutine0
+    351          }
+    352          
+    353          /***************************************************************************************************
+    354           *                                    INTERRUPT SERVICE ROUTINE
+    355           ***************************************************************************************************/
+    356          /**************************************************************************************************
+    357           * @fn      halKeyPort0Isr
+    358           *
+    359           * @brief   Port0 ISR
+    360           *
+    361           * @param
+    362           *
+    363           * @return
+    364           **************************************************************************************************/
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    365          HAL_ISR_FUNCTION( halKeyPort0Isr, P0INT_VECTOR )
+   \                     halKeyPort0Isr:
+    366          {
+   \   000000   C0E0         PUSH    A
+   \   000002   C0D0         PUSH    PSW
+   \   000004   E8           MOV     A,R0
+   \   000005   C0E0         PUSH    A
+   \   000007   E9           MOV     A,R1
+   \   000008   C0E0         PUSH    A
+   \   00000A                ; Saved register size: 4
+   \   00000A                ; Auto size: 0
+    367            HAL_ENTER_ISR();
+   \   00000A   A9A8         MOV     R1,0xa8+0x0
+   \   00000C   D2AF         SETB    0xa8.7
+    368            /*
+    369              Clear the CPU interrupt flag for Port_0
+    370              PxIFG has to be cleared before PxIF
+    371            */
+    372            HAL_KEY_CPU_PORT_0_IF = 0;
+   \   00000E   C2C5         CLR     0xc0.5
+    373            
+    374            CLEAR_SLEEP_MODE();
+    375            HAL_EXIT_ISR();
+   \   000010                REQUIRE ?Subroutine1
+   \   000010                REQUIRE _A_IEN0
+   \   000010                REQUIRE _A_IRCON
+   \   000010                ; // Fall through to label ?Subroutine1
+    376          }
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   E9           MOV     A,R1
+   \   000001   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000003   E4           CLR     A
+   \   000004   33           RLC     A
+   \   000005   F8           MOV     R0,A
+   \   000006   E9           MOV     A,R1
+   \   000007   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000009   92AF         MOV     0xa8.7,C
+   \   00000B   D0E0         POP     A
+   \   00000D   F9           MOV     R1,A
+   \   00000E   D0E0         POP     A
+   \   000010   F8           MOV     R0,A
+   \   000011   D0D0         POP     PSW
+   \   000013   D0E0         POP     A
+   \   000015   32           RETI
+    377          /**************************************************************************************************
+    378           * @fn      halKeyPort0Isr
+    379           *
+    380           * @brief   Port0 ISR
+    381           *
+    382           * @param
+    383           *
+    384           * @return
+    385           **************************************************************************************************/
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    386          HAL_ISR_FUNCTION( halKeyPort1Isr, P1INT_VECTOR )
+   \                     halKeyPort1Isr:
+    387          {
+   \   000000   C0E0         PUSH    A
+   \   000002   74F2         MOV     A,#-0xe
+   \   000004   12....       LCALL   ?INTERRUPT_ENTER_XSP
+   \   000007                ; Saved register size: 14
+   \   000007                ; Auto size: 0
+    388            HAL_ENTER_ISR();
+   \   000007   A2AF         MOV     C,0xa8.7
+   \   000009   E4           CLR     A
+   \   00000A   33           RLC     A
+   \   00000B   FE           MOV     R6,A
+   \   00000C   D2AF         SETB    0xa8.7
+    389          
+    390            if (HAL_KEY_SW_6_PXIFG & HAL_KEY_SW_6_BIT)
+   \   00000E   E58A         MOV     A,0x8a
+   \   000010   A2E4         MOV     C,0xE0 /* A   */.4
+   \   000012   5003         JNC     ??halKeyPort1Isr_0
+    391            {
+    392              halProcessKeyInterrupt();
+   \   000014                ; Setup parameters for call to function halProcessKeyInterrupt
+   \   000014   12....       LCALL   ??halProcessKeyInterrupt?relay; Banked call to: halProcessKeyInterrupt
+    393            }
+    394          
+    395            /*
+    396              Clear the CPU interrupt flag for Port_0
+    397              PxIFG has to be cleared before PxIF
+    398            */
+    399            HAL_KEY_SW_6_PXIFG = 0;
+   \                     ??halKeyPort1Isr_0:
+   \   000017   758A00       MOV     0x8a,#0x0
+    400            HAL_KEY_CPU_PORT_1_IF = 0;
+   \   00001A   C2EB         CLR     0xe8.3
+    401            
+    402            CLEAR_SLEEP_MODE();
+    403            HAL_EXIT_ISR();
+   \   00001C   EE           MOV     A,R6
+   \   00001D   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00001F   92AF         MOV     0xa8.7,C
+    404          }
+   \   000021   7F01         MOV     R7,#0x1
+   \   000023   02....       LJMP    ?INTERRUPT_LEAVE_XSP
+   \   000026                REQUIRE _A_IEN0
+   \   000026                REQUIRE P1IFG
+   \   000026                REQUIRE _A_IRCON2
+    405          
+    406          
+    407          /**************************************************************************************************
+    408           * @fn      halKeyPort2Isr
+    409           *
+    410           * @brief   Port2 ISR
+    411           *
+    412           * @param
+    413           *
+    414           * @return
+    415           **************************************************************************************************/
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    416          HAL_ISR_FUNCTION( halKeyPort2Isr, P2INT_VECTOR )
+   \                     halKeyPort2Isr:
+    417          {
+   \   000000   C0E0         PUSH    A
+   \   000002   C0D0         PUSH    PSW
+   \   000004   E8           MOV     A,R0
+   \   000005   C0E0         PUSH    A
+   \   000007   E9           MOV     A,R1
+   \   000008   C0E0         PUSH    A
+   \   00000A                ; Saved register size: 4
+   \   00000A                ; Auto size: 0
+    418            HAL_ENTER_ISR();
+   \   00000A   A9A8         MOV     R1,0xa8+0x0
+   \   00000C   D2AF         SETB    0xa8.7
+    419          
+    420            /*
+    421              Clear the CPU interrupt flag for Port_2
+    422              PxIFG has to be cleared before PxIF
+    423              Notes: P2_1 and P2_2 are debug lines.
+    424            */
+    425            HAL_KEY_CPU_PORT_2_IF = 0;
+   \   00000E   C2E8         CLR     0xe8.0
+    426          
+    427            CLEAR_SLEEP_MODE();
+    428            HAL_EXIT_ISR();
+   \   000010   80..         SJMP    ?Subroutine1
+   \   000012                REQUIRE _A_IEN0
+   \   000012                REQUIRE _A_IRCON2
+    429          }
+
+   \                                 In  segment INTVEC, offset 0x33, root
+   \                     `??halKeyPort2Isr??INTVEC 51`:
+   \   000033   02....       LJMP       (halKeyPort2Isr)
+
+   \                                 In  segment INTVEC, offset 0x6b, root
+   \                     `??halKeyPort0Isr??INTVEC 107`:
+   \   00006B   02....       LJMP       (halKeyPort0Isr)
+
+   \                                 In  segment INTVEC, offset 0x7b, root
+   \                     `??halKeyPort1Isr??INTVEC 123`:
+   \   00007B   02....       LJMP       (halKeyPort1Isr)
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_19:
+   \   000000   19000000     DD 25
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalKeyInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalKeyInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalKeyConfig?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalKeyConfig
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalKeyRead?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalKeyRead
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalKeyPoll?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalKeyPoll
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halProcessKeyInterrupt?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halProcessKeyInterrupt
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalKeyEnterSleep?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalKeyEnterSleep
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalKeyExitSleep?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalKeyExitSleep
+    430          
+    431          #else
+    432          
+    433          
+    434          void HalKeyInit(void){}
+    435          void HalKeyConfig(bool interruptEnable, halKeyCBack_t cback){}
+    436          uint8 HalKeyRead(void){ return 0;}
+    437          void HalKeyPoll(void){}
+    438          
+    439          #endif /* HAL_KEY */
+    440          
+    441          
+    442          
+    443          
+    444          
+    445          /**************************************************************************************************
+    446          **************************************************************************************************/
+    447          
+    448          
+    449          
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0      9   HalKeyConfig
+        0      9   -> osal_set_event
+        0      9   -> osal_stop_timerEx
+      0      0   HalKeyEnterSleep
+      2      0   HalKeyExitSleep
+        2      0   -> HalKeyRead
+      2      0   HalKeyInit
+      2      0   HalKeyPoll
+      0      0   HalKeyRead
+      4      0   halKeyPort0Isr
+      0     14   halKeyPort1Isr
+        0     14   -> halProcessKeyInterrupt
+      4      0   halKeyPort2Isr
+      2     18   halProcessKeyInterrupt
+        2      4   -> osal_start_timerEx
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??HalKeyConfig?relay
+       6  ??HalKeyEnterSleep?relay
+       6  ??HalKeyExitSleep?relay
+       6  ??HalKeyInit?relay
+       6  ??HalKeyPoll?relay
+       6  ??HalKeyRead?relay
+       3  ??halKeyPort0Isr??INTVEC 107
+       3  ??halKeyPort1Isr??INTVEC 123
+       3  ??halKeyPort2Isr??INTVEC 51
+       6  ??halProcessKeyInterrupt?relay
+       7  ?Subroutine0
+      22  ?Subroutine1
+      89  HalKeyConfig
+       1  HalKeyConfigured
+       3  HalKeyEnterSleep
+       9  HalKeyExitSleep
+      28  HalKeyInit
+      60  HalKeyPoll
+      11  HalKeyRead
+       1  Hal_KeyIntEnable
+       1  IEN2
+       1  P1DIR
+       1  P1IEN
+       1  P1IFG
+       1  P1SEL
+       1  PICTL
+       1  _A_IEN0
+       1  _A_IRCON
+       1  _A_IRCON2
+       1  _A_P1
+       4  __Constant_19
+      16  halKeyPort0Isr
+      38  halKeyPort1Isr
+      18  halKeyPort2Isr
+       1  halKeySavedKeys
+      36  halProcessKeyInterrupt
+       2  pHalKeyProcessFunction
+
+ 
+ 243 bytes in segment BANKED_CODE
+  42 bytes in segment BANK_RELAYS
+   9 bytes in segment INTVEC
+  94 bytes in segment NEAR_CODE
+  10 bytes in segment SFR_AN
+   4 bytes in segment XDATA_ROM_C
+   5 bytes in segment XDATA_Z
+ 
+ 379 bytes of CODE  memory (+  9 bytes shared)
+   0 bytes of CONST memory (+  4 bytes shared)
+   0 bytes of DATA  memory (+ 10 bytes shared)
+   5 bytes of XDATA memory
+
+Errors: none
+Warnings: none

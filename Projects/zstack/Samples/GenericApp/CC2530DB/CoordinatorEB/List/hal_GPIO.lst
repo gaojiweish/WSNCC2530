@@ -1,0 +1,307 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V9.10.1.2146 for 8051                30/Sep/2016  10:29:54
+# Copyright 2004-2014 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Components\hal\target\CC2530EB\hal_GPIO.c
+#    Command line       =  
+#        -f "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440) "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Components\hal\target\CC2530EB\hal_GPIO.c" -D ZTOOL_P1 -D
+#        MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -lC
+#        "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\List\"
+#        -lA "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\List\"
+#        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\Obj\"
+#        -e --no_code_motion --debug --core=plain --dptr=16,1
+#        --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\" -I "C:\Texas
+#        Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\Source\" -I
+#        "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes
+#    List file          =  
+#        C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\List\hal_GPIO.lst
+#    Object file        =  
+#        C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\Obj\hal_GPIO.r51
+#
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Mesh v1.0.0\Components\hal\target\CC2530EB\hal_GPIO.c
+      1          
+      2          #include "hal_mcu.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      3          #include "hal_GPIO.h"
+      4          
+      5          
+      6          /* GPIOA is at P1.5 */
+      7          #define HAL_GPIOA_PORT   P1
+      8          #define HAL_GPIOA_BIT    BV(5)
+      9          #define HAL_GPIOA_SEL    P1SEL
+     10          #define HAL_GPIOA_DIR    P1DIR
+     11          
+     12          /* GPIOB is at P1.6 */
+     13          #define HAL_GPIOB_PORT   P1
+     14          #define HAL_GPIOB_BIT    BV(6)
+     15          #define HAL_GPIOB_SEL    P1SEL
+     16          #define HAL_GPIOB_DIR    P1DIR
+     17          
+     18          /* GPIOC is at P1.7 */
+     19          #define HAL_GPIOC_PORT   P1
+     20          #define HAL_GPIOC_BIT    BV(7)
+     21          #define HAL_GPIOC_SEL    P1SEL
+     22          #define HAL_GPIOC_DIR    P1DIR
+     23          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     24          uint8 GPIOStatic;
+   \                     GPIOStatic:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     25          
+     26          void HalGPIOStaDelay(void);
+     27          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     28          void HalGPIOStaDelay(void)
+   \                     HalGPIOStaDelay:
+     29          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     30            uint8 x;
+     31            
+     32            for(x = 0; x < 100; x++)
+   \   000000   7464         MOV     A,#0x64
+     33            {
+     34              asm("NOP");asm("NOP");
+   \                     ??HalGPIOStaDelay_0:
+   \   000002   00           NOP
+   \   000003   00           NOP
+     35              asm("NOP");asm("NOP");
+   \   000004   00           NOP
+   \   000005   00           NOP
+     36              asm("NOP");asm("NOP");
+   \   000006   00           NOP
+   \   000007   00           NOP
+     37              asm("NOP");asm("NOP");
+   \   000008   00           NOP
+   \   000009   00           NOP
+     38              asm("NOP");asm("NOP");
+   \   00000A   00           NOP
+   \   00000B   00           NOP
+     39            }
+   \   00000C   14           DEC     A
+   \   00000D   70F3         JNZ     ??HalGPIOStaDelay_0
+     40          }
+   \   00000F   02....       LJMP    ?BRET
+     41          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     42          void HalReadGPIOSta(void)
+   \                     HalReadGPIOSta:
+     43          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     44            HAL_GPIOA_SEL &= ~(HAL_GPIOA_BIT);    /* Set pin function to GPIO */
+   \   000004   53F4DF       ANL     0xf4,#0xdf
+     45            HAL_GPIOA_DIR &= ~(HAL_GPIOA_BIT);    /* Set pin direction to Input */
+   \   000007   53FEDF       ANL     0xfe,#0xdf
+     46            
+     47            HAL_GPIOB_SEL &= ~(HAL_GPIOB_BIT);    /* Set pin function to GPIO */
+   \   00000A   53F4BF       ANL     0xf4,#0xbf
+     48            HAL_GPIOB_DIR &= ~(HAL_GPIOB_BIT);    /* Set pin direction to Input */
+   \   00000D   53FEBF       ANL     0xfe,#0xbf
+     49            
+     50            //HAL_GPIOC_SEL &= ~(HAL_GPIOC_BIT);    /* Set pin function to GPIO */
+     51            //HAL_GPIOC_DIR &= ~(HAL_GPIOC_BIT);    /* Set pin direction to Input */
+     52            
+     53            HalGPIOStaDelay();
+   \   000010                ; Setup parameters for call to function HalGPIOStaDelay
+   \   000010   12....       LCALL   ??HalGPIOStaDelay?relay; Banked call to: HalGPIOStaDelay
+     54          
+     55            if(HAL_GPIOA_PORT & HAL_GPIOA_BIT)//  High
+   \   000013   A295         MOV     C,0x90.5
+   \   000015   500F         JNC     ??HalReadGPIOSta_0
+     56            {
+     57            	if(HAL_GPIOB_PORT & HAL_GPIOB_BIT)//  High
+   \   000017   A296         MOV     C,0x90.6
+   \   000019   90....       MOV     DPTR,#GPIOStatic
+   \   00001C   5004         JNC     ??HalReadGPIOSta_1
+     58            	{
+     59            		GPIOStatic=0x03;
+   \   00001E   7403         MOV     A,#0x3
+   \   000020   8010         SJMP    ??HalReadGPIOSta_2
+     60            	}
+     61          	else
+     62          		GPIOStatic=0x01;
+   \                     ??HalReadGPIOSta_1:
+   \   000022   7401         MOV     A,#0x1
+   \   000024   800C         SJMP    ??HalReadGPIOSta_2
+     63            }
+     64            else
+     65            {
+     66            	if(HAL_GPIOB_PORT & HAL_GPIOB_BIT)//  High
+   \                     ??HalReadGPIOSta_0:
+   \   000026   A296         MOV     C,0x90.6
+   \   000028   90....       MOV     DPTR,#GPIOStatic
+   \   00002B   5004         JNC     ??HalReadGPIOSta_3
+     67            	{
+     68            		GPIOStatic=0x02;
+   \   00002D   7402         MOV     A,#0x2
+   \   00002F   8001         SJMP    ??HalReadGPIOSta_2
+     69            	}
+     70          	else
+     71          		GPIOStatic=0x00;
+   \                     ??HalReadGPIOSta_3:
+   \   000031   E4           CLR     A
+   \                     ??HalReadGPIOSta_2:
+   \   000032   F0           MOVX    @DPTR,A
+     72            }
+     73          }
+   \   000033   D083         POP     DPH
+   \   000035   D082         POP     DPL
+   \   000037   02....       LJMP    ?BRET
+   \   00003A                REQUIRE P1SEL
+   \   00003A                REQUIRE P1DIR
+   \   00003A                REQUIRE _A_P1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalGPIOStaDelay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalGPIOStaDelay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalReadGPIOSta?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalReadGPIOSta
+     74          
+     75          
+     76          
+     77          
+     78          
+     79          
+     80          
+     81          
+
+   Maximum stack usage in bytes:
+
+   ISTACK Function
+   ------ --------
+      0   HalGPIOStaDelay
+      2   HalReadGPIOSta
+        2   -> HalGPIOStaDelay
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??HalGPIOStaDelay?relay
+       6  ??HalReadGPIOSta?relay
+       1  GPIOStatic
+      18  HalGPIOStaDelay
+      58  HalReadGPIOSta
+       1  P1DIR
+       1  P1SEL
+       1  _A_P1
+
+ 
+ 76 bytes in segment BANKED_CODE
+ 12 bytes in segment BANK_RELAYS
+  3 bytes in segment SFR_AN
+  1 byte  in segment XDATA_Z
+ 
+ 88 bytes of CODE  memory
+  0 bytes of DATA  memory (+ 3 bytes shared)
+  1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,396 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V9.10.1.2146 for 8051                14/Sep/2016  11:22:08
+# Copyright 2004-2014 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Components\hal\target\CC2530EB\hal_WaterBat.c
+#    Command line       =  
+#        -f "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440) "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Components\hal\target\CC2530EB\hal_WaterBat.c" -D ZTOOL_P1 -D
+#        MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -lC
+#        "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\List\"
+#        -lA "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\List\"
+#        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\Obj\"
+#        -e --no_code_motion --debug --core=plain --dptr=16,1
+#        --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\" -I "C:\Texas
+#        Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\Source\" -I
+#        "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes
+#    List file          =  
+#        C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\List\hal_WaterBat.lst
+#    Object file        =  
+#        C:\Texas Instruments\Z-Stack Mesh
+#        v1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\Obj\hal_WaterBat.r51
+#
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Mesh v1.0.0\Components\hal\target\CC2530EB\hal_WaterBat.c
+      1          
+      2          #include "hal_mcu.h"
+      3          #include "hal_adc.h"
+      4          #include "hal_WaterBat.h"
+      5          
+      6          #define HAL_ADC_CHN_WATER    1  //     P0_1
+      7          #define HAL_ADC_CHN_BAT      6  //     P0_6
+      8          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      9          uint16 Water_V;    //  0.1v
+   \                     Water_V:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     10          uint16 Battery_V;  //  0.1v
+   \                     Battery_V:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     11          
+     12          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     13          void Hal_Read_Water_And_Battery(void)
+   \                     Hal_Read_Water_And_Battery:
+     14          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+     15            Water_V = HalAdcRead(HAL_ADC_CHN_WATER, HAL_ADC_RESOLUTION_8);
+   \   000005                ; Setup parameters for call to function HalAdcRead
+   \   000005   7A01         MOV     R2,#0x1
+   \   000007   7901         MOV     R1,#0x1
+   \   000009   12....       LCALL   ??HalAdcRead?relay   ; Banked call to: HalAdcRead
+   \   00000C   90....       MOV     DPTR,#Water_V
+   \   00000F   EA           MOV     A,R2
+   \   000010   F0           MOVX    @DPTR,A
+   \   000011   A3           INC     DPTR
+   \   000012   EB           MOV     A,R3
+   \   000013   F0           MOVX    @DPTR,A
+     16            Battery_V = HalAdcRead(HAL_ADC_CHN_BAT, HAL_ADC_RESOLUTION_8);
+   \   000014                ; Setup parameters for call to function HalAdcRead
+   \   000014   7A01         MOV     R2,#0x1
+   \   000016   7906         MOV     R1,#0x6
+   \   000018   12....       LCALL   ??HalAdcRead?relay   ; Banked call to: HalAdcRead
+   \   00001B   90....       MOV     DPTR,#Battery_V
+   \   00001E   EA           MOV     A,R2
+   \   00001F   F0           MOVX    @DPTR,A
+   \   000020   A3           INC     DPTR
+   \   000021   EB           MOV     A,R3
+   \   000022   F0           MOVX    @DPTR,A
+     17            
+     18            Water_V = (Battery_V * 33) / 128;
+   \   000023   90....       MOV     DPTR,#Battery_V
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   75F021       MOV     B,#0x21
+   \   00002A   A4           MUL     AB
+   \   00002B   F5..         MOV     ?V0,A
+   \   00002D   A8F0         MOV     R0,B
+   \   00002F   75F021       MOV     B,#0x21
+   \   000032   EB           MOV     A,R3
+   \   000033   A4           MUL     AB
+   \   000034   28           ADD     A,R0
+   \   000035   F5..         MOV     ?V1,A
+   \   000037   7407         MOV     A,#0x7
+   \   000039   78..         MOV     R0,#?V0
+   \   00003B   12....       LCALL   ?US_SHR
+   \   00003E   90....       MOV     DPTR,#Water_V
+   \   000041   12....       LCALL   ?Subroutine1 & 0xFFFF
+     19            Battery_V = (uint16)( ((uint32)Battery_V*43*33)/1280 );
+   \                     ??CrossCallReturnLabel_0:
+   \   000044   F5..         MOV     ?V0,A
+   \   000046   A3           INC     DPTR
+   \   000047   E0           MOVX    A,@DPTR
+   \   000048   F5..         MOV     ?V1,A
+   \   00004A   E4           CLR     A
+   \   00004B   F5..         MOV     ?V2,A
+   \   00004D   F5..         MOV     ?V3,A
+   \   00004F   90....       MOV     DPTR,#__Constant_58b
+   \   000052   78..         MOV     R0,#?V4
+   \   000054   12....       LCALL   ?L_MOV_X
+   \   000057   78..         MOV     R0,#?V0
+   \   000059   79..         MOV     R1,#?V4
+   \   00005B   12....       LCALL   ?L_MUL
+   \   00005E   90....       MOV     DPTR,#__Constant_500
+   \   000061   78..         MOV     R0,#?V4
+   \   000063   12....       LCALL   ?L_MOV_X
+   \   000066   78..         MOV     R0,#?V0
+   \   000068   79..         MOV     R1,#?V4
+   \   00006A   12....       LCALL   ?UL_DIV_MOD
+   \   00006D   90....       MOV     DPTR,#Battery_V
+   \   000070   E5..         MOV     A,?V0
+   \   000072   F0           MOVX    @DPTR,A
+   \   000073   A3           INC     DPTR
+   \   000074   E5..         MOV     A,?V1
+   \   000076   F0           MOVX    @DPTR,A
+     20          
+     21          }
+   \   000077                REQUIRE ?Subroutine0
+   \   000077                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F08         MOV     R7,#0x8
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   E5..         MOV     A,?V0
+   \   000002   F0           MOVX    @DPTR,A
+   \   000003   A3           INC     DPTR
+   \   000004   E5..         MOV     A,?V1
+   \   000006   F0           MOVX    @DPTR,A
+   \   000007   90....       MOV     DPTR,#Battery_V
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   22           RET
+     22          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     23          uint16 Hal_Read_Water(void)
+   \                     Hal_Read_Water:
+     24          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     25            Water_V = HalAdcRead(HAL_ADC_CHN_WATER, HAL_ADC_RESOLUTION_8);
+     26            Water_V = (Water_V * 33) / 128;
+   \   000005                ; Setup parameters for call to function HalAdcRead
+   \   000005   7A01         MOV     R2,#0x1
+   \   000007   7901         MOV     R1,#0x1
+   \   000009   12....       LCALL   ??HalAdcRead?relay   ; Banked call to: HalAdcRead
+   \   00000C   EA           MOV     A,R2
+   \   00000D   75F021       MOV     B,#0x21
+   \   000010   A4           MUL     AB
+   \   000011   FA           MOV     R2,A
+   \   000012   A8F0         MOV     R0,B
+   \   000014   75F021       MOV     B,#0x21
+   \   000017   EB           MOV     A,R3
+   \   000018   A4           MUL     AB
+   \   000019   28           ADD     A,R0
+   \   00001A   FB           MOV     R3,A
+   \   00001B   8A..         MOV     ?V0,R2
+   \   00001D   8B..         MOV     ?V1,R3
+   \   00001F   7407         MOV     A,#0x7
+   \   000021   78..         MOV     R0,#?V0
+   \   000023   12....       LCALL   ?US_SHR
+   \   000026   90....       MOV     DPTR,#Water_V
+   \   000029   E5..         MOV     A,?V0
+   \   00002B   F0           MOVX    @DPTR,A
+   \   00002C   A3           INC     DPTR
+   \   00002D   E5..         MOV     A,?V1
+   \   00002F   F0           MOVX    @DPTR,A
+     27            return Water_V;
+   \   000030   90....       MOV     DPTR,#Water_V
+   \   000033   E0           MOVX    A,@DPTR
+   \   000034   FA           MOV     R2,A
+   \   000035   A3           INC     DPTR
+   \   000036   E0           MOVX    A,@DPTR
+   \   000037   FB           MOV     R3,A
+   \   000038   7F02         MOV     R7,#0x2
+   \   00003A   02....       LJMP    ?BANKED_LEAVE_XDATA
+     28          }
+     29          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     30          uint16 Hal_Read_Battery(void)
+   \                     Hal_Read_Battery:
+     31          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+     32            Battery_V = HalAdcRead(HAL_ADC_CHN_BAT, HAL_ADC_RESOLUTION_8);
+     33            Battery_V = (uint16)( ((uint32)Battery_V*43*33)/1280 );
+   \   000005                ; Setup parameters for call to function HalAdcRead
+   \   000005   7A01         MOV     R2,#0x1
+   \   000007   7906         MOV     R1,#0x6
+   \   000009   12....       LCALL   ??HalAdcRead?relay   ; Banked call to: HalAdcRead
+   \   00000C   8A..         MOV     ?V0,R2
+   \   00000E   8B..         MOV     ?V1,R3
+   \   000010   E4           CLR     A
+   \   000011   F5..         MOV     ?V2,A
+   \   000013   F5..         MOV     ?V3,A
+   \   000015   90....       MOV     DPTR,#__Constant_58b
+   \   000018   78..         MOV     R0,#?V4
+   \   00001A   12....       LCALL   ?L_MOV_X
+   \   00001D   78..         MOV     R0,#?V0
+   \   00001F   79..         MOV     R1,#?V4
+   \   000021   12....       LCALL   ?L_MUL
+   \   000024   90....       MOV     DPTR,#__Constant_500
+   \   000027   78..         MOV     R0,#?V4
+   \   000029   12....       LCALL   ?L_MOV_X
+   \   00002C   78..         MOV     R0,#?V0
+   \   00002E   79..         MOV     R1,#?V4
+   \   000030   12....       LCALL   ?UL_DIV_MOD
+   \   000033   90....       MOV     DPTR,#Battery_V
+   \   000036   12....       LCALL   ?Subroutine1 & 0xFFFF
+     34            return Battery_V;
+   \                     ??CrossCallReturnLabel_1:
+   \   000039   FA           MOV     R2,A
+   \   00003A   A3           INC     DPTR
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   FB           MOV     R3,A
+   \   00003D   02....       LJMP    ?Subroutine0 & 0xFFFF
+     35          }
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_58b:
+   \   000000   8B050000     DD 1419
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_500:
+   \   000000   00050000     DD 1280
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Hal_Read_Water_And_Battery?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Hal_Read_Water_And_Battery
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Hal_Read_Water?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Hal_Read_Water
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Hal_Read_Battery?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Hal_Read_Battery
+     36          
+     37          
+     38          
+
+   Maximum stack usage in bytes:
+
+   XSTACK Function
+   ------ --------
+     16   Hal_Read_Battery
+       16   -> HalAdcRead
+     10   Hal_Read_Water
+       10   -> HalAdcRead
+     16   Hal_Read_Water_And_Battery
+       16   -> HalAdcRead
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??Hal_Read_Battery?relay
+       6  ??Hal_Read_Water?relay
+       6  ??Hal_Read_Water_And_Battery?relay
+       5  ?Subroutine0
+      12  ?Subroutine1
+       2  Battery_V
+      64  Hal_Read_Battery
+      61  Hal_Read_Water
+     119  Hal_Read_Water_And_Battery
+       2  Water_V
+       4  __Constant_500
+       4  __Constant_58b
+
+ 
+ 261 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   8 bytes in segment XDATA_ROM_C
+   4 bytes in segment XDATA_Z
+ 
+ 279 bytes of CODE  memory
+   0 bytes of CONST memory (+ 8 bytes shared)
+   4 bytes of XDATA memory
+
+Errors: none
+Warnings: none
